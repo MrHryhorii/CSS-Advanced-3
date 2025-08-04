@@ -97,11 +97,13 @@ main{
 }
 
 #toy{
-    
     position: absolute;
-    bottom: 0%;
+    bottom: 5%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: -50px;
+    margin-top: -50px; 
+
+     transition: all 0.6s ease;
 }
 
 .toy-rectangle{
@@ -117,12 +119,11 @@ main{
     background-color: var(--color-toy);
 }
 
-.toy-triangle{
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 50px 100px 50px;
-    border-color: transparent transparent var(--color-toy) transparent;
+.toy-semicircle{
+    width: 100px;
+    height: 50px;
+    border-radius: 50px 50px 0 0;
+    background-color: var(--color-toy);
 }
 
 /* button */

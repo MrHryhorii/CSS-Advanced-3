@@ -1,11 +1,10 @@
 // var init
 
-const shapesList = ["circle", "rectangle", "triangle"];
+const shapesList = ["circle", "rectangle", "semicircle"];
 let shapeId = 0;
 const toy = document.getElementById("toy");
 
 let isProcessing = false;
-let btnText = "Start!"
 
 // main functions
 
