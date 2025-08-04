@@ -15,8 +15,11 @@
     --color-controls: cornsilk;
 
     --color-toy: purple;
+    --color-btn-text: white;
+    --color-btn-hover: darkviolet;
 
     --padding-8: 8px;
+    --size-btn-text: 24px;
 }
 
 body{
@@ -118,4 +121,29 @@ main{
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     border-bottom: 100px solid var(--color-toy);
+}
+
+/* button */
+
+.control{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--color-toy);
+}
+
+button:hover{
+    background-color: var(--color-btn-hover);
+}
+
+button p{
+    color: var(--color-btn-text);
+    font-size: var(--size-btn-text);
 }
