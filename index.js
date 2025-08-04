@@ -4,6 +4,6 @@ let shapeId = 0;
 const getShapeClass = () => {
     let result = "";
     const prefix = "toy-";
-    result += classFix + shapesList[shapeId];
+    result += prefix + shapesList[shapeId];
     return result;
 };
