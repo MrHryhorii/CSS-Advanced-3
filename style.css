@@ -1,3 +1,4 @@
+/* base */
 *{
     margin: 0;
     padding: 0;
@@ -14,10 +15,19 @@ body{
 
 header, main, footer{
     min-height: 70px;
+    padding: 8px;
+}
+
+header, main, .shapes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 }
 
 header{
     background-color: aqua;
+    flex-direction: column;
 }
 
 main{
@@ -27,4 +37,39 @@ main{
 
 footer{
     background-color: azure;
+}
+
+/* hover mouse */
+.hover{
+    padding: 8px;
+}
+
+.hover:hover {
+    cursor: pointer;
+}
+
+.select:hover{
+    background-color: aliceblue;
+    border-radius: 15px;
+}
+
+/* main content*/
+main{
+    padding: 8px;
+}
+
+.display, .control{
+    min-height: 100px;
+    min-width: 192px;
+    height: 500px;
+    max-width: 800px;
+    background-color: cornsilk;
+}
+
+.display{
+    flex-grow: 1;
+    background-image: url("./img/vector-space.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
