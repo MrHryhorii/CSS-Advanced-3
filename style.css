@@ -147,3 +147,23 @@ button p{
     color: var(--color-btn-text);
     font-size: var(--size-btn-text);
 }
+
+/* responsive */
+.shapes{
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    main{
+        flex-direction: column;
+    }
+
+    .display, .control{
+        width: 100%;
+    }
+
+    .control{
+        height: 128px;
+    }
+
+}
