@@ -120,6 +120,7 @@ main{
     background-image: linear-gradient(135deg, var(--color-toy), var(--color-toy-dark));
 
     transition: all 0.6s ease;
+    transform-origin: bottom center;
 }
 
 .toy-rectangle{
@@ -186,35 +187,41 @@ button p{
 
 /* jump animation*/
 @keyframes jump {
-    0%  { 
-            transform: translateY(0) scaleY(1.0);
-        }
-    30% {
-            transform: translateY(-300px) scaleY(1.15);
-        }
-    50% {
-            transform: translateY(0) scaleY(0.88);
-        }
-    65% {
-            transform: translateY(-200px) scaleY(1.12);
-        }
-    75% {
-            transform: translateY(0) scaleY(0.91);
-        }
+    0% {
+        transform: translateY(0) scaleX(1) scaleY(1);
+        background-image: linear-gradient(135deg, var(--color-toy), var(--color-toy-dark));
+    }
+    10% {
+        transform: translateY(0) scaleX(1.1) scaleY(0.85);
+    }
+    25% {
+        transform: translateY(-120px) scaleX(0.95) scaleY(1.05);
+    }
+    35% {
+        transform: translateY(-200px) scaleX(1) scaleY(1);
+        background-image: linear-gradient(90deg, var(--color-toy), var(--color-toy-dark));
+    }
+    40% {
+        transform: translateY(-200px) scaleX(1) scaleY(1);
+        background-image: linear-gradient(90deg, var(--color-toy), var(--color-toy-dark));
+    }
+    55% {
+        transform: translateY(-120px) scaleX(0.97) scaleY(1.03);
+    }
+    70% {
+        transform: translateY(0) scaleX(1.1) scaleY(0.85);
+        background-image: linear-gradient(135deg, var(--color-toy), var(--color-toy-dark));
+    }
     85% {
-            transform: translateY(-150px) scaleY(1.09);
-        }
-    90% {
-            transform: translateY(0) scaleY(0.95);
-        }
-    97% {
-            transform: translateY(-60px) scaleY(1.05);
-        }
-    100%{
-            transform: translateY(0) scaleY(1.0);
-        }
+        transform: translateY(-60px) scaleX(0.96) scaleY(1.04);
+        background-image: linear-gradient(122deg, var(--color-toy), var(--color-toy-dark));
+    }
+    100% {
+        transform: translateY(0) scaleX(1) scaleY(1);
+        background-image: linear-gradient(135deg, var(--color-toy), var(--color-toy-dark));
+    }
 }
 
 #toy.jump {
-    animation: jump 3.6s ease;
+    animation: jump 1.4s linear forwards;
 }
