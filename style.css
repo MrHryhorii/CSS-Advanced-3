@@ -15,6 +15,7 @@
     --color-controls: cornsilk;
 
     --color-toy: purple;
+    --color-toy-dark: rgb(75, 0, 75);
     --color-btn-text: white;
     --color-btn-hover: darkviolet;
 
@@ -59,10 +60,24 @@ footer{
 /* hover mouse */
 .hover{
     padding: var(--padding-8);
+    transition: all 0.6s ease;
 }
 
 .hover:hover {
     cursor: pointer;
+}
+
+.hover:hover p{
+    animation: sideMove 2s ease-in-out infinite;
+}
+
+@keyframes sideMove {
+    75% {
+        transform: translateY(8px);
+    }
+    90% {
+        transform: translateY(2px);
+    }
 }
 
 .select:hover{
@@ -102,28 +117,26 @@ main{
     left: 50%;
     margin-left: -50px;
     margin-top: -50px; 
+    background-image: linear-gradient(135deg, var(--color-toy), var(--color-toy-dark));
 
-     transition: all 0.6s ease;
+    transition: all 0.6s ease;
 }
 
 .toy-rectangle{
     width: 100px;
     height: 100px;
-    background-color: var(--color-toy);
 }
 
 .toy-circle{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: var(--color-toy);
 }
 
 .toy-semicircle{
     width: 100px;
     height: 50px;
     border-radius: 50px 50px 0 0;
-    background-color: var(--color-toy);
 }
 
 /* button */
@@ -173,13 +186,35 @@ button p{
 
 /* jump animation*/
 @keyframes jump {
-    0%   { transform: translateY(0); }
-    30%  { transform: translateY(-300px); }
-    50%  { transform: translateY(0); }
-    70%  { transform: translateY(-150px); }
-    100% { transform: translateY(0); }
+    0%  { 
+            transform: translateY(0) scaleY(1.0);
+        }
+    30% {
+            transform: translateY(-300px) scaleY(1.15);
+        }
+    50% {
+            transform: translateY(0) scaleY(0.88);
+        }
+    65% {
+            transform: translateY(-200px) scaleY(1.12);
+        }
+    75% {
+            transform: translateY(0) scaleY(0.91);
+        }
+    85% {
+            transform: translateY(-150px) scaleY(1.09);
+        }
+    90% {
+            transform: translateY(0) scaleY(0.95);
+        }
+    97% {
+            transform: translateY(-60px) scaleY(1.05);
+        }
+    100%{
+            transform: translateY(0) scaleY(1.0);
+        }
 }
 
 #toy.jump {
-  animation: jump 0.6s ease;
+    animation: jump 3.6s ease;
 }
