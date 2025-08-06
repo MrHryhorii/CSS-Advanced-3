@@ -40,6 +40,16 @@ const changeToyShape = (id) => {
     setShapeClass();
 };
 
+// jump animation
+const jumpBtn = document.getElementById("jump-btn");
+
+jumpBtn.addEventListener("click", () => {
+  toy.classList.add("jump");
+  toy.addEventListener("animationend", () => {
+    toy.classList.remove("jump");
+  }, { once: true });
+});
+
 // init div clicks
 
 const divCircle = document.getElementById("div-circle");

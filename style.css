@@ -170,3 +170,16 @@ button p{
     }
 
 }
+
+/* jump animation*/
+@keyframes jump {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-300px); }
+    50%  { transform: translateY(0); }
+    70%  { transform: translateY(-150px); }
+    100% { transform: translateY(0); }
+}
+
+#toy.jump {
+  animation: jump 0.6s ease;
+}
