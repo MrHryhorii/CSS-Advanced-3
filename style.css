@@ -19,6 +19,9 @@
     --color-btn-text: white;
     --color-btn-hover: darkviolet;
 
+    --color-btn-active: red;
+    --color-btn-text-active: yellow;
+
     --padding-8: 8px;
     --size-btn-text: 24px;
 }
@@ -174,18 +177,39 @@ button{
     height: 100px;
     border-radius: 50%;
     background-color: var(--color-toy);
-    transition: background-color 0.4 ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
+
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 button:hover{
     background-color: var(--color-btn-hover);
 }
 
-button:active{background-color:red;}
+button:active{
+    transform: scale(0.95);
+    background-color: var(--color-btn-active);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.6);
+}
 
 button p{
     color: var(--color-btn-text);
     font-size: var(--size-btn-text);
+}
+
+button:active, button:active p{
+    text-shadow: 0px 0px 5px var(--color-btn-text-active);
+}
+
+/* link */
+a{
+    color: var(--color-toy);
+    transition: all 0.4s ease-in-out;
+}
+
+a:hover{
+    transform: rotate(-2deg);
+    color: var(--color-btn-active);
 }
 
 /* responsive */
