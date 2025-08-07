@@ -6,21 +6,21 @@
 }
 
 :root{
-    --color-body: bisque;
-    --color-header: aqua;
-    --color-main: aquamarine;
-    --color-footer: azure;
+    --color-body: #1f1b24;
+    --color-header: #2e2640; 
+    --color-main: #352d48;
+    --color-footer: #2c2439;
 
-    --color-hover: aliceblue;
-    --color-controls: cornsilk;
+    --color-hover: #403554;
+    --color-controls: #2b2236;
 
     --color-toy: purple;
-    --color-toy-dark: rgb(75, 0, 75);
+    --color-toy-dark: #2a002a;
     --color-btn-text: white;
-    --color-btn-hover: darkviolet;
+    --color-btn-hover: #c83cff;
 
-    --color-btn-active: red;
-    --color-btn-text-active: yellow;
+    --color-btn-active: #a300ff; 
+    --color-btn-text-active: #ffffff;
 
     --padding-8: 8px;
     --size-btn-text: 24px;
@@ -32,6 +32,29 @@ body{
     min-height: 100svh;
 
     background-color: var(--color-body);
+
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    letter-spacing: 0.25px;
+}
+
+h1, h2, h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.8px;
+    text-shadow: 0 0 6px rgba(200, 60, 255, 0.3);
+    margin-bottom: 8px;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1rem;
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 8px;
 }
 
 header, main, footer{
@@ -49,6 +72,16 @@ header, main, .shapes{
 header{
     background-color: var(--color-header);
     flex-direction: column;
+}
+
+header h2 {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 8px 24px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(200, 60, 255, 0.2);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    text-align: center;
 }
 
 main{
@@ -141,7 +174,7 @@ main{
     left: 50%;
     margin-left: -50px;
     margin-top: -50px; 
-    background-image: linear-gradient(135deg, var(--color-toy), var(--color-toy-dark));
+    background-image: radial-gradient(circle at 30% 30%, var(--color-toy), var(--color-toy-dark));
 
     transition: all 0.6s ease;
     transform-origin: bottom center;
@@ -191,6 +224,7 @@ main{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    background-color: #261d33;
 }
 
 button{
@@ -205,12 +239,13 @@ button{
 
 button:hover{
     background-color: var(--color-btn-hover);
+    box-shadow: 0 0 12px var(--color-btn-hover);
 }
 
 button:active{
     transform: scale(0.95);
     background-color: var(--color-btn-active);
-    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 0px 6px var(--color-btn-active);
 }
 
 button p{
@@ -258,36 +293,37 @@ a:hover{
 @keyframes jump {
     0% {
         transform: translateY(0) scaleX(1) scaleY(1);
-        background-image: linear-gradient(135deg, var(--color-toy), var(--color-toy-dark));
+        background-image: radial-gradient(circle at 30% 30%, var(--color-toy), var(--color-toy-dark));
     }
     10% {
         transform: translateY(0) scaleX(1.1) scaleY(0.85);
     }
     25% {
         transform: translateY(-120px) scaleX(0.95) scaleY(1.05);
+        background-image: radial-gradient(circle at 20% 40%, var(--color-toy), var(--color-toy-dark));
     }
     35% {
         transform: translateY(-200px) scaleX(1) scaleY(1);
-        background-image: linear-gradient(90deg, var(--color-toy), var(--color-toy-dark));
+        background-image: radial-gradient(circle at 10% 50%, var(--color-toy), var(--color-toy-dark));
     }
     40% {
         transform: translateY(-200px) scaleX(1) scaleY(1);
-        background-image: linear-gradient(90deg, var(--color-toy), var(--color-toy-dark));
     }
     55% {
         transform: translateY(-120px) scaleX(0.97) scaleY(1.03);
+        background-image: radial-gradient(circle at 20% 40%, var(--color-toy), var(--color-toy-dark));
     }
     70% {
         transform: translateY(0) scaleX(1.1) scaleY(0.85);
-        background-image: linear-gradient(135deg, var(--color-toy), var(--color-toy-dark));
+        background-image: radial-gradient(circle at 30% 30%, var(--color-toy), var(--color-toy-dark));
     }
     85% {
         transform: translateY(-60px) scaleX(0.96) scaleY(1.04);
-        background-image: linear-gradient(122deg, var(--color-toy), var(--color-toy-dark));
+        background-image: radial-gradient(circle at 25% 35%, var(--color-toy), var(--color-toy-dark));
     }
     100% {
         transform: translateY(0) scaleX(1) scaleY(1);
-        background-image: linear-gradient(135deg, var(--color-toy), var(--color-toy-dark));
+        background-image: radial-gradient(circle at 30% 30%, var(--color-toy), var(--color-toy-dark));
     }
 }
 
@@ -355,9 +391,10 @@ a:hover{
     margin: 16px;
     padding: 16px;
     width: 200px;
-    background-color: white;
+    background-color: #20182a;
+    color: #eee;
     border-radius: 16px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(255, 0, 255, 0.2);
     text-align: center;
     transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
     animation: cardFade 1s ease forwards;
@@ -365,8 +402,17 @@ a:hover{
 
 .card:hover {
     transform: scale(1.05) rotate(1deg);
-    background-color: var(--color-hover);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background-color: #2b2040;
+    box-shadow: 0 0px 20px rgba(200, 60, 255, 0.4);
+}
+
+.card h3 {
+    color: #ffffff;
+}
+
+.card p {
+    color: #cccccc;
+    font-size: 0.9rem;
 }
 
 @keyframes cardFade {
