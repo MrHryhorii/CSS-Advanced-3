@@ -165,7 +165,7 @@ main{
 .control{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -174,11 +174,14 @@ button{
     height: 100px;
     border-radius: 50%;
     background-color: var(--color-toy);
+    transition: background-color 0.4 ease;
 }
 
 button:hover{
     background-color: var(--color-btn-hover);
 }
+
+button:active{background-color:red;}
 
 button p{
     color: var(--color-btn-text);
@@ -201,6 +204,7 @@ button p{
 
     .control{
         height: 128px;
+        flex-direction: row;
     }
 
 }
