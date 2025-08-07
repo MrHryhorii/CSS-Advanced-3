@@ -132,6 +132,7 @@ main{
 /* toy */
 .display{
     position: relative;
+    overflow: hidden;
 }
 
 #toy{
@@ -161,6 +162,26 @@ main{
     width: 100px;
     height: 50px;
     border-radius: 50px 50px 0 0;
+}
+
+/* toy shadow */
+#toy-shadow{
+    position: absolute;
+    width: 150px;
+    height: 10px;
+    bottom: 4%;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: -50px; 
+    background-image: linear-gradient(135deg, rgba(25, 0, 25, 0.8), rgba(55, 0, 55, 0.8));
+    -webkit-filter: blur(0.5px);
+    -moz-filter: blur(0.5px);
+    -o-filter: blur(0.5px);
+    -ms-filter: blur(0.5px);
+    filter: blur(0.5px);
+    border-radius: 50%;
+    transition: all 0.6s ease;
+    transform-origin: bottom left;
 }
 
 /* button */
@@ -272,4 +293,48 @@ a:hover{
 
 #toy.jump {
     animation: jump 1.4s linear forwards;
+}
+
+/* shadow jump */
+#toy-shadow.jump-shadow{
+    animation: shadowjump 1.4s linear forwards;
+}
+
+@keyframes shadowjump {
+    0% {
+        margin-left: -40px;
+        background-image: linear-gradient(135deg, rgba(25, 0, 25, 0.8), rgba(55, 0, 55, 0.8));
+    }
+    10% {
+        margin-left: -40px;
+        background-image: linear-gradient(135deg, rgba(25, 0, 25, 0.8), rgba(55, 0, 55, 0.8));
+    }
+    25% {
+        margin-left: 200px;
+        background-image: linear-gradient(135deg, rgba(25, 0, 25, 0.6), rgba(55, 0, 55, 0.6));
+    }
+    35% {
+        margin-left: 400px;
+        background-image: linear-gradient(270, rgba(25, 0, 25, 0.4), rgba(55, 0, 55, 0.4));
+    }
+    40% {
+        margin-left: 400px;
+        background-image: linear-gradient(270deg, rgba(25, 0, 25, 0.4), rgba(55, 0, 55, 0.4));
+    }
+    55% {
+        margin-left: 200px;
+        background-image: linear-gradient(135deg, rgba(25, 0, 25, 0.6), rgba(55, 0, 55, 0.6));
+    }
+    70% {
+        margin-left: -40px;
+        background-image: linear-gradient(135deg, rgba(25, 0, 25, 0.8), rgba(55, 0, 55, 0.8));
+    }
+    85% {
+        margin-left: 100px;
+        background-image: linear-gradient(135deg, rgba(25, 0, 25, 0.7), rgba(55, 0, 55, 0.7));
+    }
+    100% {
+        margin-left: -40px;
+        background-image: linear-gradient(135deg, rgba(25, 0, 25, 0.8), rgba(55, 0, 55, 0.8));
+    }
 }

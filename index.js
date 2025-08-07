@@ -3,6 +3,7 @@
 const shapesList = ["circle", "rectangle", "semicircle"];
 let shapeId = 0;
 const toy = document.getElementById("toy");
+const shadow = document.getElementById("toy-shadow");
 
 let isProcessing = false;
 
@@ -45,8 +46,10 @@ const jumpBtn = document.getElementById("jump-btn");
 
 jumpBtn.addEventListener("click", () => {
     toy.classList.add("jump");
+    shadow.classList.add("jump-shadow");
     toy.addEventListener("animationend", () => {
         toy.classList.remove("jump");
+        shadow.classList.remove("jump-shadow");
     }, { once: true });
 });
 
@@ -97,10 +100,10 @@ let isPrinting = false;
 let isDeleting = false;
 
 toggleBtn.addEventListener("click", () => {
-    if (!showing) 
+    // check process running
+    if(!isPrinting && !isDeleting)
     {
-        // check process running
-        if(!isPrinting && !isDeleting)
+        if (!showing) 
         {
             linkEl = footer.querySelector("a");
             if(!linkEl)
@@ -133,12 +136,8 @@ toggleBtn.addEventListener("click", () => {
 
             toggleBtn.textContent = "Hide Repo";
             showing = true;
-        };
-    }
-    else 
-    {
-        // check process running
-        if(!isPrinting && !isDeleting)
+        }
+        else 
         {
             // loop to remove chars
             const chars = linkEl.textContent.split("");
