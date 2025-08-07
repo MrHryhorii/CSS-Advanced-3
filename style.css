@@ -85,6 +85,26 @@ footer{
     border-radius: 15px;
 }
 
+/* more menu effects */
+.shapes .select {
+    transition: box-shadow 0.4s ease, transform 0.4s ease, background-color 0.4s ease, border-radius 0.4s ease;
+}
+
+.shapes .select:hover {
+    transform: scale(1.1) rotate(3deg);
+    background-color: var(--color-hover);
+    border-radius: 12px;
+}
+
+.shapes .select:active {
+    transform: scale(0.95) rotate(-2deg);
+}
+
+.active-shape {
+    box-shadow: 0 0 10px var(--color-btn-hover);
+    transform: scale(1.15);
+}
+
 /* main content*/
 main{
     padding: var(--padding-8);

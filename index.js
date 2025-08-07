@@ -44,10 +44,10 @@ const changeToyShape = (id) => {
 const jumpBtn = document.getElementById("jump-btn");
 
 jumpBtn.addEventListener("click", () => {
-  toy.classList.add("jump");
-  toy.addEventListener("animationend", () => {
-    toy.classList.remove("jump");
-  }, { once: true });
+    toy.classList.add("jump");
+    toy.addEventListener("animationend", () => {
+        toy.classList.remove("jump");
+    }, { once: true });
 });
 
 // init div clicks
@@ -56,15 +56,84 @@ const divCircle = document.getElementById("div-circle");
 const divRect = document.getElementById("div-rectangle");
 const divTri = document.getElementById("div-triangle");
 
+const shapeDivs = [divCircle, divRect, divTri];
+
+function setActiveShape(activeDiv) {
+    shapeDivs.forEach(div => div.classList.remove("active-shape"));
+    activeDiv.classList.add("active-shape");
+}
 
 divCircle.addEventListener("click", function(){
     changeToyShape(0);
+    setActiveShape(divCircle);
 });
 
 divRect.addEventListener("click", function(){
     changeToyShape(1);
+    setActiveShape(divRect);
 });
 
 divTri.addEventListener("click", function(){
     changeToyShape(2);
+    setActiveShape(divTri);
+});
+
+// show repo animations
+
+const control = document.querySelector(".control");
+const footer = document.querySelector("footer"); // get footer
+
+// create new button
+let showing = false;
+const toggleBtn = document.createElement("button");
+toggleBtn.textContent = "Show Repo";
+control.appendChild(toggleBtn);
+
+const repoLink = "https://github.com/MrHryhorii/CSS-Advanced-3";
+let linkEl;
+
+toggleBtn.addEventListener("click", () => {
+    if (!showing) {
+        // create a-tag
+        linkEl = document.createElement("a");
+        linkEl.href = repoLink;
+        linkEl.target = "_blank"; // new tab
+        linkEl.style.display = "inline-block";
+        linkEl.style.marginTop = "10px";
+        // add into footer
+        footer.appendChild(linkEl); 
+
+        // loop to add chars
+        let i = 0;
+        const chars = repoLink.split("");
+        const typer = setInterval(() => {
+            if (i < chars.length) {
+                linkEl.textContent += chars[i];
+                i++;
+            } else {
+                clearInterval(typer);
+            };
+        }, 50);
+
+        toggleBtn.textContent = "Hide Repo";
+        showing = true;
+        } else {
+            // loop to remove chars
+            const chars = linkEl.textContent.split("");
+            let i = chars.length;
+            const deleter = setInterval(() => {
+                if (i > 0) {
+                    chars.pop();
+                    linkEl.textContent = chars.join("");
+                    i--;
+                } else {
+                    clearInterval(deleter);
+                    // remove link element
+                    linkEl.remove();
+                };
+            }, 50);
+            // change button state
+            toggleBtn.textContent = "Show Repo";
+            showing = false;
+        }
 });
